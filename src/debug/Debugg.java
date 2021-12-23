@@ -14,7 +14,10 @@ public class Debugg {
         }
     }
 
-    public static void trayRandom(int loop, Ticket game){
+    /**
+     * emulates how random generated numbers are
+     */
+    public static void tryRandom(int loop, Ticket game){
 
         int delta = game._getEndRange() - game._getStartRange();
 

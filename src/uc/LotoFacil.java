@@ -5,7 +5,7 @@ import util.Ticket;
 import java.io.Serializable;
 
 
-public class LotoFacil extends Ticket implements Serializable {
+public class LotoFacil extends Ticket {
 
     private final String mName = "Loto facil";
     private final int mQtdNumeros = 15;

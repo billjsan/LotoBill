@@ -5,7 +5,7 @@ import util.Ticket;
 import java.io.Serializable;
 
 
-public class Quina extends Ticket implements Serializable {
+public class Quina extends Ticket {
 
     private final String mName = "Quina";
     private final int mQtdNumeros = 5;

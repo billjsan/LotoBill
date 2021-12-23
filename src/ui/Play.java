@@ -13,10 +13,12 @@ public class Play {
 
         Quina quina = new Quina();
         MegaSena sena = new MegaSena();
+
         LotoFacil lfacil = new LotoFacil();
         Outra other = new Outra(25,30,5,"other");
 
-        Debugg.showArrayIntInfo(other._getBetNumbers());
+        //Debugg.showArrayIntInfo(sena._getBetNumbers());
+        Debugg.showArrayIntInfo(new MegaSena()._getBetNumbers());
 
         }
 }

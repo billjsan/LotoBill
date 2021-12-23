@@ -6,7 +6,7 @@ import util.Ticket;
 import java.io.Serializable;
 
 
-public class MegaSena extends Ticket implements Serializable {
+public class MegaSena extends Ticket {
 
     private final String mName = "Mega sena";
     private final int mQtdNumeros = 6;
