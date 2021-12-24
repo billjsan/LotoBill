@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="LotoBill:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/LotoBill_jar</output-path>
+    <root id="root">
+      <element id="archive" name="LotoBill.jar">
+        <element id="module-output" name="LotoBill" />
+      </element>
+    </root>
+  </artifact>
+</component>
