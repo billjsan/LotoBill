@@ -1,7 +1,7 @@
 package debug;
 
-import util.SortNumbers;
-import util.Ticket;
+import controll.Sort;
+import entity.Ticket;
 
 import java.util.Arrays;
 
@@ -28,7 +28,7 @@ public class Debugg {
 
             for (int i = 0; i< loop; i++){
 
-                int n = SortNumbers.sortInt(game);
+                int n = Sort.sortIntValue(game);
 
                 val[n]++;
 
@@ -39,7 +39,7 @@ public class Debugg {
         }else{
 
             for(int i = 0; i < loop; i++){
-                int n = SortNumbers.sortInt(game);
+                int n = Sort.sortIntValue(game);
                 val[(n - game._getStartRange())] ++;
             }
 
