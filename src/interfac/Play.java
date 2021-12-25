@@ -22,6 +22,7 @@ public class Play {
 
             String title ="Números sorteados:";
             int choice = UI.chooseGame(listGames);
+
             switch (choice){
                 case 1 :
                     //quina
@@ -37,9 +38,9 @@ public class Play {
                     break;
                 case 4:
                     //custom
-                    UI.showResult(Sort.sortUniqueNumbers(UI.getIntFromUser("Entre com o range inteiro inicial"),
-                            UI.getIntFromUser("Entre com o range inteiro final"),
-                            UI.getIntFromUser("Entre com a quantidade de numeros"), "gameName"), title);
+                        UI.showResult(Sort.sortUniqueNumbers(UI.getIntFromUser("Entre com o range inteiro inicial"),
+                                UI.getIntFromUser("Entre com o range inteiro final"),
+                                UI.getIntFromUser("Entre com a quantidade de numeros"), "gameName"), title);
                     break;
                 case 5:
                     // inteiro
