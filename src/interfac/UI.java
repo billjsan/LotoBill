@@ -11,7 +11,9 @@ public class UI {
      * @return
      */
     public static int chooseGame(ArrayList<String> list){
+
         return Integer.parseInt(JOptionPane.showInputDialog("Escolha um jogo:\n\n" + showMainScreen(list) ));
+
     }
 
     /**
@@ -28,7 +30,9 @@ public class UI {
      * show the content of an Integer array list
      * @param vector
      */
+
     public static void showResult(ArrayList<Integer> vector){
+
 
         StringBuilder text = new StringBuilder();
         for (Integer integer : vector) {
@@ -44,6 +48,7 @@ public class UI {
      * @param vector
      * @param message
      */
+
     public static void showResult(Integer[] vector, String message){
 
         StringBuilder text = new StringBuilder();
@@ -57,11 +62,13 @@ public class UI {
             {
                 text.append(vector[i]);
             }
+
         }
         JOptionPane.showMessageDialog(null, text);
     }
 
     public static void showResult(Integer integer){
+
         JOptionPane.showMessageDialog(null, integer);
     }
 
@@ -70,9 +77,11 @@ public class UI {
      * @param list
      * @return
      */
+
     private static String showMainScreen(ArrayList<String> list){
 
         StringBuilder text = new StringBuilder();
+
         for (String string : list) {
             text.append(string).append("\n");
         }
@@ -83,7 +92,9 @@ public class UI {
      * show the string passed as parameter in UI
      * @param message
      */
+
     public static void showResult(String message) {
+
         JOptionPane.showMessageDialog(null,message);
     }
 }

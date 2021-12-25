@@ -44,13 +44,16 @@ public class Play {
                 case 5:
                     // inteiro
                     UI.showResult(Sort.sortIntValue(UI.getIntFromUser("Entre com o range inteiro inicial"),
+
                             UI.getIntFromUser("Entre com o range inteiro final")));
                     break;
                 case 6:
                     play = false;
                     break;
                 default:
+
                     UI.showResult("Você não digitou um valor válido!");
+
                     break;
             }
         }
