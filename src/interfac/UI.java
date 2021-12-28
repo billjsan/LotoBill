@@ -13,7 +13,6 @@ public class UI {
     public static int chooseGame(ArrayList<String> list){
         Integer intValue= null;
         boolean done = false;
-
         while(!done){
             try{
                 String userInput = JOptionPane.showInputDialog("Escolha um jogo:\n\n" + showMainScreen(list) );
@@ -27,6 +26,7 @@ public class UI {
         return intValue;
        }
 
+
     /**
      * gets and returns an integer from user, a message is required
      * @param message
@@ -36,7 +36,6 @@ public class UI {
 
         Integer intValue= null;
         boolean done = false;
-
         while(!done){
             try{
                 String userInput = JOptionPane.showInputDialog(message);
@@ -57,12 +56,10 @@ public class UI {
 
     public static void showResult(ArrayList<Integer> vector){
 
-
         StringBuilder text = new StringBuilder();
         for (Integer integer : vector) {
             text.append(integer).append(", ");
         }
-
         JOptionPane.showMessageDialog(null, text.toString());
     }
 
@@ -86,13 +83,11 @@ public class UI {
             {
                 text.append(vector[i]);
             }
-
         }
         JOptionPane.showMessageDialog(null, text);
     }
 
     public static void showResult(Integer integer){
-
         JOptionPane.showMessageDialog(null, integer);
     }
 
@@ -105,7 +100,6 @@ public class UI {
     private static String showMainScreen(ArrayList<String> list){
 
         StringBuilder text = new StringBuilder();
-
         for (String string : list) {
             text.append(string).append("\n");
         }
@@ -118,7 +112,6 @@ public class UI {
      */
 
     public static void showResult(String message) {
-
         JOptionPane.showMessageDialog(null,message);
     }
 }
