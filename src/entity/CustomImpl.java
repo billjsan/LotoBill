@@ -1,3 +1,7 @@
+/**
+ * Author: Willian J. Santos
+ * Date 28/12/2021
+ */
 package entity;
 
 /**

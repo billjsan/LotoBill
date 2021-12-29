@@ -1,13 +1,15 @@
+/**
+ * Author: Willian J. Santos
+ * Date 28/12/2021
+ */
+
 package controll;
-
-
 import entity.*;
 
 import java.security.SecureRandom;
-
 import java.util.Objects;
 
-abstract public class Sort {
+abstract public class Sort  {
 
     /**
      * provides an Array of integers with random values
@@ -16,16 +18,15 @@ abstract public class Sort {
      * @param game
      * @return
      */
-    public static Integer[] sortUniqueNumbers(Ticket game) {
+    public static Integer[] getSortedUniqueNumbersByTicket(Ticket game)
+            throws IllegalArgumentException{
 
         Integer[] vector = new Integer[game._getQtdGameNumbers()];
-        /**
-         * repeats for each value of a ticket game
-         */
+
         int count = 0;
         while(count < game._getQtdGameNumbers()) {
 
-            int n = sortIntValue(game);
+            int n = getSortedIntValueByTicket(game);
             if (isUnique( vector, n)) {
                 vector[itemsCount(vector)] = n;
                 count++;
@@ -43,9 +44,11 @@ abstract public class Sort {
      * @param name
      * @return
      */
-    public static Integer[] sortUniqueNumbers(int startRange, int endRange, int qtdNumbers, String name ){
+    public static Integer[] getSortUniqueNumbersByValues(int startRange, int endRange,
+                                                         int qtdNumbers, String name )
+            throws IllegalArgumentException{
         CustomImpl custom = new CustomImpl(startRange, endRange, qtdNumbers, name);
-        return Sort.sortUniqueNumbers(custom);
+        return Sort.getSortedUniqueNumbersByTicket(custom);
     }
 
     /**
@@ -54,23 +57,22 @@ abstract public class Sort {
      * @param keyCase
      * @return
      */
-    public static Integer[] sortUniqueNumbers(int keyCase) {
+    public static Integer[] getSortedUniqueNumbersByCase(int keyCase)
+            throws IllegalArgumentException {
 
         switch (keyCase){
             case 1:
                 //quina
                 QuinaImpl quina = new QuinaImpl();
-                return  Sort.sortUniqueNumbers(quina);
+                return  Sort.getSortedUniqueNumbersByTicket(quina);
             case 2:
                 // mega sena
                 MegaSenaImpl megaSena = new MegaSenaImpl();
-                return Sort.sortUniqueNumbers(megaSena);
+                return Sort.getSortedUniqueNumbersByTicket(megaSena);
             case 3:
                 // lotofacil
                 LotoFacilImpl lotoFacil = new LotoFacilImpl();
-                return Sort.sortUniqueNumbers(lotoFacil);
-            default:
-                break;
+                return Sort.getSortedUniqueNumbersByTicket(lotoFacil);
         }
         return null;
     }
@@ -81,7 +83,23 @@ abstract public class Sort {
      * @param game
      * @return
      */
-    public static int sortIntValue(Ticket game){
+    public static int getSortedIntValueByTicket(Ticket game)
+            throws IllegalArgumentException{
+
+        //Begin - willian J. Santos - 29-12-21 -
+        //Adds a approach to avoid input inconsistencies
+
+        //better to visualize
+        int start, end, count;
+        start = game._getStartRange();
+        end = game._getEndRange();
+        count = game._getQtdGameNumbers();
+
+        if((start > end) || ((start == end) && (count > 0)) ||
+                ((end - start) < count -1)) {
+            throw new IllegalArgumentException();
+        }
+        //end - 29-12-21
 
         SecureRandom num = new SecureRandom();
         return game._getStartRange() +
@@ -89,12 +107,21 @@ abstract public class Sort {
     }
 
     /**
-     * sort a int number between range values received
+     * sort a integer number between range values received
      * @param startValue
      * @param endValue
      * @return
      */
-    public static int sortIntValue(int startValue, int endValue){
+    public static int getSortedIntValueByRange(int startValue, int endValue)
+            throws IllegalArgumentException{
+
+        //Begin - willian J. Santos - 29-12-21 -
+        //Adds a approach to avoid input inconsistencies
+        if(!(startValue <= endValue )){
+            throw new IllegalArgumentException("Valor inicial " +
+                    "maior que valor final");
+        }
+        //end - 29-12-21
 
         SecureRandom sr = new SecureRandom();
         return startValue + sr.nextInt(((endValue + 1) - (startValue)));
@@ -114,7 +141,6 @@ abstract public class Sort {
                 return false;
             }
         }
-
         return true;
     }// change de approach
 

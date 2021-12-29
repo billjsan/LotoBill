@@ -1,3 +1,7 @@
+/**
+ * Author: Willian J. Santos
+ * Date 28/12/2021
+ */
 package controll;
 
 
@@ -10,6 +14,12 @@ import java.util.ArrayList;
 public class GamesList {
 
     private final ArrayList<String> gamesList = new ArrayList<>();
+
+    //Begin - willian J. Santos - 29-12-21 -
+    //Adds a approach to avoid input inconsistencies
+    public static final int CUSTOM = 4;
+    public static final int UNIQUE_INTEGER = 5;
+    //end 29-12-21
 
     /**
      * Main screen content
