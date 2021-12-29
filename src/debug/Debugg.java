@@ -1,3 +1,7 @@
+/**
+ * Author: Willian J. Santos
+ * Date 28/12/2021
+ */
 package debug;
 
 import controll.Sort;
@@ -28,7 +32,7 @@ public class Debugg {
 
             for (int i = 0; i< loop; i++){
 
-                int n = Sort.sortIntValue(game);
+                int n = Sort.getSortedIntValueByTicket(game);
 
                 val[n]++;
 
@@ -39,7 +43,7 @@ public class Debugg {
         }else{
 
             for(int i = 0; i < loop; i++){
-                int n = Sort.sortIntValue(game);
+                int n = Sort.getSortedIntValueByTicket(game);
                 val[(n - game._getStartRange())] ++;
             }
 
